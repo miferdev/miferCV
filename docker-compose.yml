@@ -1,0 +1,10 @@
+services:
+  astro-cv:
+    build: .
+    container_name: cv_maker_container
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4321:4321"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"

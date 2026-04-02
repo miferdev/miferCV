@@ -1,0 +1,45 @@
+---
+import '../css/cv.css';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Quick CV Maker | Vanilla Project</title>
+  </head>
+  <body>
+    
+    <header class="no-print">
+      <div class="form-container">
+        <h1>MiFerCV 🚀</h1>
+        <div class="input-group">
+          <label for="inputName">Nombre</label>
+          <input type="text" id="inputName" placeholder="Escribe tu nombre..." />
+        </div>
+        <div class="input-group">
+          <label for="inputImg">Foto de perfil</label>
+          <input type="file" id="inputImg" accept="image/*" />
+        </div>
+        <button id="printBtn">Generar y Guardar PDF</button>
+      </div>
+    </header>
+
+    <main class="cv-page">
+      <section class="cv-sidebar">
+        <img id="cvPhoto" src="" alt="Foto CV" style="display:none;" />
+      </section>
+      <section class="cv-content">
+        <h1 id="cvName">Tu Nombre Aquí</h1>
+        <p>Generado con Astro & Docker (Vanilla JS)</p>
+      </section>
+    </main>
+
+    <script>
+      // Importamos la lógica y la ejecutamos en el cliente
+      import { initCV } from '../js/script.js';
+      initCV();
+    </script>
+
+  </body>
+</html>

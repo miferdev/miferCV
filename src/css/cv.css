@@ -1,0 +1,50 @@
+/* Variables de color */
+:root {
+  --primary: #2c3e50;
+  --secondary: #27ae60;
+  --bg-light: #f4f7f6;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--bg-light);
+}
+
+/* Contenedor del Formulario */
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.input-group { margin-bottom: 1.2rem; }
+label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary); }
+input { 
+  width: 100%; padding: 0.8rem; border: 2px solid #eee; 
+  border-radius: 6px; transition: border-color 0.3s;
+}
+input:focus { border-color: var(--secondary); outline: none; }
+
+button {
+  width: 100%; padding: 1rem; background: var(--secondary);
+  color: white; border: none; border-radius: 6px;
+  font-size: 1rem; font-weight: bold; cursor: pointer;
+}
+
+/* Diseño del CV (Hoja A4) */
+.cv-page {
+  display: flex; width: 210mm; min-height: 297mm;
+  margin: 3rem auto; background: white; padding: 15mm;
+  box-sizing: border-box; box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Reglas de Impresión */
+@media print {
+  .no-print { display: none !important; }
+  .cv-page { margin: 0; box-shadow: none; width: 100%; }
+  @page { size: A4; margin: 0; }
+}
